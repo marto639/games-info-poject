@@ -1,16 +1,18 @@
 import { useNavigate, Link } from 'react-router-dom';
-import { useContext } from 'react'
+import { useContext } from 'react';
 
 import { AuthContext } from '../../contexts/AuthContext.js';
 import * as authService from '../Services/authService.js';
 
 export const Register = () => {
-    const navigate = useNavigate();
     const { loginUser } = useContext(AuthContext);
+
+    const navigate = useNavigate();
 
     const registerUser = (e) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
+
+        let formData = new FormData(e.currentTarget);
 
         const username = formData.get('username');
         const email = formData.get('email');

@@ -360,14 +360,6 @@ select {
 }
 
 /* browse page css */
-
-body {
-  width: 100%;
-  height: auto;
-  background: #1c1e26 no-repeat center top;
-  box-sizing: border-box;
-  overflow-x: hidden;
-}
 .overwatchImage {
   position: relative;
   border-radius: 6px;
@@ -399,6 +391,9 @@ body {
   color: white;
   font-size: 50px;
   left: 570px;
+}
+.text {
+  font-size: 30px;
 }
 
 /* Details Page */

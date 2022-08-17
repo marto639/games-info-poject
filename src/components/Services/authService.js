@@ -27,4 +27,5 @@ export const register = (username, email, password, rePassword) => {
         },
         body: JSON.stringify({ username, email, password, rePassword })
     })
+        .then(res => res.json());
 };

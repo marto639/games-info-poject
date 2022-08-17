@@ -1,11 +1,12 @@
-import { useNavigate, Link, useResolvedPath } from "react-router-dom";
-import { useState, useEffect, useContext } from 'react';
+import { useNavigate, Link } from "react-router-dom";
+import { useContext } from 'react';
 
 import { AuthContext } from "../../contexts/AuthContext.js";
 import * as authService from '../Services/authService.js';
 
 export const Login = () => {
     const { loginUser } = useContext(AuthContext);
+
     const navigate = useNavigate();
 
     const loginUserHandler = (e) => {
