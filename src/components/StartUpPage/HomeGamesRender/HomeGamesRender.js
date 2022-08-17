@@ -1,13 +1,18 @@
+import { Link } from 'react-router-dom';
+
 export const HomeGameRender = ({
-    game
+    game,
+    submitHandler
 }) => {
     return (
-        < a >
-            <img
-                className="game-image"
-                src={game.imageUrl}
-                alt={game.name}
-            />
-        </a >
+        <>
+            < Link to={`/details/${game._id}`}>
+                <img
+                    className="game-image"
+                    src={game.imageUrl}
+                    alt={game.name}
+                />
+            </Link>
+        </>
     );
 };

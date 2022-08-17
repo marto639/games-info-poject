@@ -1,10 +1,13 @@
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react'
+import { useNavigate, Link } from 'react-router-dom';
+import { useContext } from 'react'
+
+import { AuthContext } from '../../contexts/AuthContext.js';
+import * as authService from '../Services/authService.js';
 
 export const Register = () => {
-    const [user, setUser] = useState([]);
-
     const navigate = useNavigate();
+    const { loginUser } = useContext(AuthContext);
+
     const registerUser = (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -14,37 +17,55 @@ export const Register = () => {
         const password = formData.get('password');
         const rePassword = formData.get('rePassword');
 
-        fetch('http://localhost:3030/users/register', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ username, email, password, rePassword })
-        })
-            .then(res => res.json())
-            .then(user => {
-                setUser(user);
+        if (username == '' || email == '' || password == '' || rePassword == '') {
+            return alert('All fields must be filled');
+        }
+
+        if (password !== rePassword) {
+            return alert('password must be the same with repeat password');
+        }
+
+        authService.register(username, email, password)
+            .then(data => {
+                loginUser(data);
                 navigate('/');
-                localStorage.setItem('user', JSON.stringify(user));
-            }).catch((err) => {
-                navigate('/register');
-            });
+            })
     };
     return (
         <>
             <h1 className="website-register-name">Lordom</h1>
             <form onSubmit={registerUser}>
                 <div>
-                    <input className="register-input" type="text" placeholder="Username" name="username" />
+                    <input
+                        className="register-input"
+                        type="text"
+                        placeholder="Username"
+                        name="username"
+                    />
                 </div>
                 <div>
-                    <input className="register-input" type="text" placeholder="Email" name="email" />
+                    <input
+                        className="register-input"
+                        type="text"
+                        placeholder="Email"
+                        name="email"
+                    />
                 </div>
                 <div>
-                    <input className="register-input" type="password" placeholder="Password" name="password" />
+                    <input
+                        className="register-input"
+                        type="password"
+                        placeholder="Password"
+                        name="password"
+                    />
                 </div>
                 <div>
-                    <input className="register-input" type="password" placeholder="Repeat Password" name="rePassword" />
+                    <input
+                        className="register-input"
+                        type="password"
+                        placeholder="Repeat Password"
+                        name="rePassword"
+                    />
                 </div>
                 <input className="register-input"
                     type="submit"
@@ -53,7 +74,14 @@ export const Register = () => {
                     value="Register"
                 />
                 <h3 className="redirect-text-register">Already have an account?</h3>
-                <input className="register-input" type="button" name="login" id="loginBtn" defaultValue="Log In" />
+                <Link to="/login"><input
+                    className="register-input"
+                    type="button"
+                    name="login"
+                    id="loginBtn"
+                    defaultValue="Log In"
+                />
+                </Link>
             </form>
         </>
 

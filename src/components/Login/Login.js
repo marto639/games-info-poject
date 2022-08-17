@@ -1,39 +1,39 @@
-import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from 'react'
+import { useNavigate, Link, useResolvedPath } from "react-router-dom";
+import { useState, useEffect, useContext } from 'react';
+
+import { AuthContext } from "../../contexts/AuthContext.js";
+import * as authService from '../Services/authService.js';
 
 export const Login = () => {
+    const { loginUser } = useContext(AuthContext);
     const navigate = useNavigate();
-    const [user, setUser] = useState([]);
 
-    const loginUser = (e) => {
+    const loginUserHandler = (e) => {
+        e.preventDefault();
 
         let formData = new FormData(e.currentTarget);
 
         let email = formData.get('email');
         let password = formData.get('password');
 
-        e.preventDefault();
-        fetch('http://localhost:3030/jsonstore/users/login', {
-            method: "POST",
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        })
-            .then(res => res.json())
-            .then(user => {
-                setUser(user);
-                navigate('/');
-                localStorage.setItem('user', JSON.stringify(user));
-            }).catch((err) => {
-                navigate('/login');
-            });
+        if (email == '' || password == '') {
+            return alert('All fields must be filled!');
+        }
 
+        authService.login(email, password)
+            .then(data => {
+                if (data.accessToken) {
+                    loginUser(data);
+                    navigate('/');
+                } else {
+                    return alert('Incorrect email or password!');
+                }
+            });
     };
     return (
         <>
             <h1 className="website-login-name">Lordom</h1>
-            <form onSubmit={loginUser}>
+            <form onSubmit={loginUserHandler}>
                 <div>
                     <input className="login-input" type="text" placeholder="Email" name="email" />
                 </div>
@@ -42,12 +42,13 @@ export const Login = () => {
                 </div>
                 <input className="login-input" type="submit" name="login" id="loginBtn" value="Log In" />
                 <h3 className="redirect-text-login">Don't have account?</h3>
-                <input className="login-input"
+                <Link to="/register"><input className="login-input"
                     type="button"
                     name="register"
                     id="registerBtn"
                     defaultValue="Register"
                 />
+                </Link>
             </form>
         </>
     );

@@ -2,13 +2,19 @@ import { useState, useEffect } from 'react';
 
 import { HomeGameRender } from './HomeGamesRender/HomeGamesRender';
 
-import * as gameSservice from '../Services/gamesService';
+import * as gamesService from '../Services/gamesService';
 
 export const Home = () => {
+    const submitHandler = (e) => {
+        e.preventDefault();
+
+        console.log(e.target);
+    };
+
     const [games, setGames] = useState([]);
 
     useEffect(() => {
-        gameSservice.getAll()
+        gamesService.getAll()
             .then(result => {
                 const res = Object.values(result);
                 setGames(res);
@@ -62,10 +68,9 @@ export const Home = () => {
 
             <div className="more-games">
                 <div className="container">
-                    {games.map(x => <HomeGameRender key={x.name} game={x} />)}
+                    {games.map(x => <HomeGameRender key={x._id} game={x} />)}
                 </div>
             </div>
-
         </>
     );
 };

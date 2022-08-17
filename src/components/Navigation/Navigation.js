@@ -1,22 +1,20 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import magnifyingGlass from '../../images/magnifying-glass.png';
 
+import { AuthContext } from '../../contexts/AuthContext.js';
 import * as navigationService from './navigationService/navigationService';
 
 export const Navigation = () => {
-    const user = localStorage.getItem('user');
-
-    const logout = () => {
-        localStorage.removeItem('user');
-    };
+    const { user } = useContext(AuthContext);
 
     return (
         <nav id="container">
             <div className="games-nav">
                 <div
                     className="nav-btns nav-options-btn"
-                    onMouseOver={(e) =>
+                    onClick={(e) =>
                         navigationService.showHiddenGamesInfo(e)}
                 >
                     Games
@@ -32,18 +30,17 @@ export const Navigation = () => {
                     </li>
                 </ul>
             </div>
-            {user ? 'asd' : 'asd'}
             <div className="account-nav">
                 <div
                     className="nav-btns account"
-                    onMouseOver={(e) =>
+                    onClick={(e) =>
                         navigationService.showHiddenAccountInfo(e)}
                 >
                     Account
                     <select />
                 </div>
-                {!user ?
-                    <ul className="ul-account-nav">
+                {!user.accessToken
+                    ? <ul className="ul-account-nav">
                         <li className="li-account-btn">
                             <Link to="/login">Login</Link>
                         </li>
@@ -54,7 +51,10 @@ export const Navigation = () => {
                     :
                     <ul className="ul-account-nav">
                         <li className="li-account-btn">
-                            <Link to="/" onClick={logout}>Logout</Link>
+                            <Link to="/create" >Create</Link>
+                        </li>
+                        <li className="li-account-btn">
+                            <Link to="/logout" >Logout</Link>
                         </li>
                     </ul>
                 }

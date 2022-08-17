@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import * as gameService from '../Services/gamesService';
+import * as gameService from '../Services/gamesService.js';
 import { GameComponent } from './GamesComponent/GameComopnent';
 
 export const Browse = () => {
@@ -7,7 +7,7 @@ export const Browse = () => {
     const [games, setGames] = useState([]);
 
     useEffect(() => {
-        gameService.getEveryGame()
+        gameService.getAll()
             .then(result => {
                 const gameResult = Object.values(result);
 
@@ -25,8 +25,8 @@ export const Browse = () => {
                 <h1 className="games-introduction">Games</h1>
             </div>
             {games.length > 0
-                ? games.map(x => <GameComponent key={x.id} games={x} />)
-                :<h1>No games!</h1>
+                ? games.map(x => <GameComponent key={x._id} games={x} />)
+                : <h1>No games!</h1>
             }
         </>
     );

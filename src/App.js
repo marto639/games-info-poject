@@ -3,36 +3,52 @@ import { Navigation } from './components/Navigation/Navigation';
 import { Home } from './components/StartUpPage/Home';
 import { Login } from './components/Login/Login';
 import { Register } from './components/Register/Register';
+import { Logout } from './components/Logout/Logout';
 import { Browse } from './components/Browse/Browse';
 import { Details } from './components/Details/Details';
-import './App.css';
+import { Create } from './components/Create/Create';
 import { useState, useEffect } from 'react';
+import * as gameService from './components/Services/gamesService.js';
+import { AuthContext } from './contexts/AuthContext.js';
+import './App.css';
 
 function App() {
   const [games, setGames] = useState([]);
+  const [user, setUser] = useState({});
+
+  const loginUser = (userData) => {
+    setUser(userData);
+  };
+
+  const logoutUser = () => {
+    setUser({});
+  }
 
   useEffect(() => {
-    fetch('http://localhost:3030/jsonstore/allGames')
-      .then(res => res.json())
-      .then(result => {
-        setGames(Object.values(result));
-      })
+    gameService.getAll()
+      .then(game => {
+        setGames(game);
+      });
   }, []);
 
   const id = games.map(x => { return x.id });
 
   return (
-    <div className="App">
-      <Navigation />
+    <AuthContext.Provider value={{ user, loginUser, logoutUser }}>
+      <div className="App">
+        <Navigation />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/browse" element={<Browse />} />
-        <Route path="/details/:id" element={<Details games={games} />} />
-      </Routes>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/browse" element={<Browse />} />
+          <Route path="/details/:id" element={<Details games={games} />} />
+          <Route path="/create" element={<Create />} />
+        </Routes>
+      </div>
+    </AuthContext.Provider>
   );
 }
 
