@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Navigation } from './components/Navigation/Navigation';
 import { Home } from './components/StartUpPage/Home';
@@ -7,9 +8,12 @@ import { Logout } from './components/Logout/Logout';
 import { Browse } from './components/Browse/Browse';
 import { Details } from './components/Details/Details';
 import { Create } from './components/Create/Create';
-import { useState, useEffect } from 'react';
+import { Edit } from './components/Edit/Edit.js';
+
 import * as gameService from './components/Services/gamesService.js';
+
 import { AuthContext } from './contexts/AuthContext.js';
+
 import './App.css';
 
 function App() {
@@ -46,6 +50,7 @@ function App() {
           <Route path="/browse" element={<Browse />} />
           <Route path="/details/:id" element={<Details games={games} />} />
           <Route path="/create" element={<Create />} />
+          <Route path="/edit" element={<Edit />} />
         </Routes>
       </div>
     </AuthContext.Provider>

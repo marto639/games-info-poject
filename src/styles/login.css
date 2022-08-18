@@ -1,0 +1,50 @@
+/* Login Page */
+.website-login-name {
+  position: relative;
+  top: 50px;
+  left: 575px;
+  font-size: 50px;
+  color: white;
+}
+.login-input {
+  position: relative;
+  top: 30px;
+  left: 450px;
+  width: 400px;
+  height: 35px;
+  border-radius: 6px;
+  text-align: left;
+  margin: 10px;
+  font-size: 20px;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.36);
+  background-color: #171920;
+}
+.login-input:hover {
+  border-color: #0074e0;
+}
+#loginBtn {
+  text-align: center;
+  height: 40px;
+  color: white;
+  background-color: #0074e0;
+  font-size: 20px;
+  cursor: pointer;
+}
+.redirect-text-login {
+  position: relative;
+  top: 30px;
+  left: 570px;
+  margin: 10px;
+  font-size: 20px;
+  color: white;
+  cursor: default;
+}
+#registerBtn {
+  text-align: center;
+  height: 40px;
+  color: white;
+  background-color: #0074e0;
+  font-size: 20px;
+  cursor: pointer;
+}

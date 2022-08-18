@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
+
 import * as gameService from '../Services/gamesService.js';
 
 export const Details = ({
@@ -23,6 +24,8 @@ export const Details = ({
             <div className="details-container">
                 <p className="gameDetails">{game.brand}</p>
                 <p className="gameDetails">{game.gameInfo}</p>
+                <Link to={`/edit/${id}`} className="details-buttons edit-btn">Edit</Link>
+                <Link className="details-buttons delete-btn" to="">Delete</Link>
             </div>
         </div>
     );

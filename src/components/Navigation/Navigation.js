@@ -28,6 +28,12 @@ export const Navigation = () => {
                     <li className="li-games-btn">
                         <Link to="/browse">Browse</Link>
                     </li>
+                    {user.accessToken
+                        ? <li className="li-account-btn">
+                            <Link to="/create" >Create</Link>
+                        </li>
+                        : ''
+                    }
                 </ul>
             </div>
             <div className="account-nav">
@@ -50,9 +56,6 @@ export const Navigation = () => {
                     </ul>
                     :
                     <ul className="ul-account-nav">
-                        <li className="li-account-btn">
-                            <Link to="/create" >Create</Link>
-                        </li>
                         <li className="li-account-btn">
                             <Link to="/logout" >Logout</Link>
                         </li>

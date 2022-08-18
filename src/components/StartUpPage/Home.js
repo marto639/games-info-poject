@@ -5,12 +5,6 @@ import { HomeGameRender } from './HomeGamesRender/HomeGamesRender';
 import * as gamesService from '../Services/gamesService';
 
 export const Home = () => {
-    const submitHandler = (e) => {
-        e.preventDefault();
-
-        console.log(e.target);
-    };
-
     const [games, setGames] = useState([]);
 
     useEffect(() => {
@@ -46,7 +40,7 @@ export const Home = () => {
                             alt="GTA-V"
                         />
                     </div>
-                    <div>
+                    {/* <div>
                         <img
                             src={require("../../images/arrows-to-navigate/right-arrow.png")}
                             alt="right-arrow-navigation"
@@ -59,7 +53,7 @@ export const Home = () => {
                             alt="left-arrow-navigation"
                             className="left-arrow"
                         />
-                    </div>
+                    </div> */}
                 </div>
                 <div>
                     <h1 className="more-games-text">Famous Games</h1>

@@ -1,3 +1,4 @@
+/* Navigation */
 body {
   width: 100%;
   height: auto;
@@ -5,7 +6,6 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 }
-/* Navigation */
 #container {
   position: relative;
   right: 20px;
@@ -165,8 +165,7 @@ select {
   float: right;
 }
 
-/* Header */
-/* Start game  */
+/* Home Page  */
 .first-game-picture {
   position: relative;
   bottom: 20px;
@@ -179,7 +178,7 @@ select {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
 }
-/* Second game */
+
 .second-game-picture {
   position: relative;
   left: 58%;
@@ -210,7 +209,7 @@ select {
   width: 72%;
   transform: scale(1);
 }
-/* arrows to change through pictures */
+
 .right-arrow {
   position: relative;
   bottom: 450px;
@@ -234,7 +233,7 @@ select {
 .right-arrow:hover {
   opacity: 0.7;
 }
-/* more games added from the server */
+
 .more-games-text {
   position: relative;
   bottom: 160px;
@@ -306,8 +305,8 @@ select {
   font-size: 20px;
   cursor: pointer;
 }
-/* Register Page */
 
+/* Register Page */
 .website-register-name {
   position: relative;
   bottom: 20px;
@@ -420,6 +419,19 @@ select {
   font-size: 50px;
   color: white;
 }
+.details-buttons {
+  font-size: 50px;
+  text-decoration: none;
+  color: white;
+}
+.edit-btn {
+  margin-left: 5%;
+}
+.delete-btn {
+  margin-left: 53%;
+}
+
+/* Create page */
 .createInputs {
   position: relative;
   top: 10px;
@@ -463,3 +475,5 @@ select {
   font-size: 20px;
   cursor: pointer;
 }
+
+/* Edit Page */
