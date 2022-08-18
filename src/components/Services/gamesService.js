@@ -20,4 +20,16 @@ export const createGame = (accessToken, brand, imageUrl, gameInfo) => {
         body: JSON.stringify({ brand, imageUrl, gameInfo })
     })
         .then(res => res.json());
-}; 
+};
+
+export const editGame = (id, accessToken, brand, imageUrl, gameInfo) => {
+    return fetch(`${baseUrl}/${id}`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+            'X-Authorization': accessToken
+        },
+        body: JSON.stringify({ brand, imageUrl, gameInfo })
+    })
+        .then(res => res.json());
+};

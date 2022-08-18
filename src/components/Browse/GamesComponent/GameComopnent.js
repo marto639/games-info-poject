@@ -10,10 +10,10 @@ export const GameComponent = ({
                 src={games.imageUrl}
                 alt="game-image"
             />
-            </Link>
             <div className="game-container">
                 <p className="text">{games.brand}</p>
             </div>
+            </Link>
         </div >
     );
 };
