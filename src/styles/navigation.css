@@ -1,0 +1,166 @@
+/* Navigation */
+body {
+  width: 100%;
+  height: auto;
+  background: #1c1e26 no-repeat center top;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+#container {
+  position: relative;
+  right: 20px;
+  bottom: 20px;
+  background-color: #171920;
+  height: 80px;
+  padding: 0 40px;
+  width: 100%;
+  height: px;
+  margin: auto;
+}
+.nav-btns {
+  position: relative;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+.nav-btns:hover {
+  color: gray;
+}
+.nav-options-game {
+  top: 30px;
+  text-align: left;
+  width: 130px;
+}
+select {
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  pointer-events: none;
+}
+.account-nav {
+  position: absolute;
+  top: 20%;
+  left: 80%;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.account {
+  position: relative;
+  color: white;
+  font-size: 30px;
+  padding: 8px 20px;
+  width: 100px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  cursor: pointer;
+  right: 10px;
+  top: 10px;
+}
+.ul-account-nav {
+  list-style: none;
+  position: absolute;
+  display: flex;
+  background-color: black;
+  width: 40%;
+  text-align: left;
+  border-radius: 6px;
+  top: 45px;
+  z-index: 100;
+}
+.account-nav ul {
+  line-height: 35px;
+  padding: 8px 20px;
+  display: none;
+}
+.li-account-btn a {
+  color: white;
+  text-decoration: none;
+  text-align: right;
+  font-size: 20px;
+}
+.li-account-btn a:hover {
+  color: gray;
+}
+.games-nav {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-options-btn {
+  position: relative;
+  left: 10px;
+  color: white;
+  text-align: 20px;
+  font-size: 30px;
+  padding: 8px 20px;
+  width: 300px;
+  line-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 10px;
+  cursor: pointer;
+}
+.games-nav ul {
+  position: absolute;
+  list-style: none;
+  top: 20px;
+  display: none;
+  background-color: black;
+  width: 90%;
+  text-align: left;
+  border-radius: 6px;
+  z-index: 100;
+}
+.games-nav ul li {
+  line-height: 20px;
+  padding: 8px 20px;
+}
+.games-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+.games-nav ul li a:hover {
+  color: gray;
+}
+.search {
+  position: relative;
+  margin-left: 106%;
+  width: 211px;
+  bottom: 3px;
+  right: 500px;
+}
+.input-search {
+  position: relative;
+  height: 35px;
+  width: 177px;
+  top: 33px;
+  left: 10px;
+  font-size: 20px;
+  border-radius: 6px;
+  display: none;
+  border: none;
+  color: white;
+  border-color: rgb(87, 85, 85);
+  background-color: rgb(87, 85, 85);
+}
+.search-glass {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  left: 20px;
+  top: 35px;
+  float: right;
+}

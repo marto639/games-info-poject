@@ -26,7 +26,7 @@ export const Browse = () => {
             </div>
             {games.length > 0
                 ? games.map(x => <GameComponent key={x._id} games={x} />)
-                : <h1>No games!</h1>
+                : <h1 className='no-games-text'>No Games Yet!</h1>
             }
         </>
     );

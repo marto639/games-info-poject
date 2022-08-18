@@ -6,7 +6,7 @@ import * as gamesService from '../Services/gamesService';
 
 export const Home = () => {
     const [games, setGames] = useState([]);
-
+    
     useEffect(() => {
         gamesService.getAll()
             .then(result => {

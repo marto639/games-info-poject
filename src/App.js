@@ -15,7 +15,7 @@ import * as gameService from './components/Services/gamesService.js';
 
 import { AuthContext } from './contexts/AuthContext.js';
 
-import './App.css';
+import './styles/style.css';
 
 function App() {
   const [games, setGames] = useState([]);

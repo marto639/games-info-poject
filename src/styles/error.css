@@ -1,0 +1,21 @@
+/* Error Page */
+.error-image {
+  width: 500px;
+  height: 500px;
+}
+.error-message {
+  position: relative;
+  color: white;
+  left: 700px;
+  bottom: 580px;
+  font-size: 160px;
+  cursor: default;
+}
+.page-not-found {
+  position: relative;
+  color: white;
+  font-size: 60px;
+  left: 610px;
+  bottom: 680px;
+  cursor: default;
+}

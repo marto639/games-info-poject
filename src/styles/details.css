@@ -1,0 +1,35 @@
+/* Details Page */
+.container-details {
+  position: relative;
+  background-color: #171920;
+  width: 600px;
+  height: 600px;
+  left: 400px;
+  border-radius: 6px;
+}
+.game-details {
+  width: 600px;
+  border-radius: 6px;
+}
+.gameDetails {
+  color: white;
+  font-size: 20px;
+}
+.website-name {
+  position: relative;
+  top: 30px;
+  left: 575px;
+  font-size: 50px;
+  color: white;
+}
+.details-buttons {
+  font-size: 50px;
+  text-decoration: none;
+  color: #52595d;
+}
+.edit-btn {
+  margin-left: 5%;
+}
+.delete-btn {
+  margin-left: 53%;
+}
