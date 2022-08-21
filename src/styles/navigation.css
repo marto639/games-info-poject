@@ -134,33 +134,3 @@ select {
 .games-nav ul li a:hover {
   color: gray;
 }
-.search {
-  position: relative;
-  margin-left: 106%;
-  width: 211px;
-  bottom: 3px;
-  right: 500px;
-}
-.input-search {
-  position: relative;
-  height: 35px;
-  width: 177px;
-  top: 33px;
-  left: 10px;
-  font-size: 20px;
-  border-radius: 6px;
-  display: none;
-  border: none;
-  color: white;
-  border-color: rgb(87, 85, 85);
-  background-color: rgb(87, 85, 85);
-}
-.search-glass {
-  position: relative;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  left: 20px;
-  top: 35px;
-  float: right;
-}

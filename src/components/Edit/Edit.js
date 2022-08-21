@@ -6,9 +6,17 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 export const Edit = () => {
     const navigate = useNavigate();
+    const [game, setGame] = useState([]);
+
     const { id } = useParams();
     const { user } = useContext(AuthContext);
-    
+
+
+    gameService.getOne(id)
+        .then(result => {
+            setGame(result);
+        })
+
     const editGame = (e) => {
         e.preventDefault();
 
@@ -22,8 +30,8 @@ export const Edit = () => {
             return alert('All fields must be fiiled');
         }
         gameService.editGame(id, user.accessToken, brand, image, gameInfo)
-        .then(game => {
-            navigate('/browse');
+            .then(game => {
+                navigate('/browse');
             })
     }
 
@@ -33,16 +41,19 @@ export const Edit = () => {
                 type="text"
                 name="brand"
                 className="inputs brand"
+                defaultValue={game.brand}
             />
             <input
                 type="text"
                 name="imageUrl"
                 className="inputs imageUrl"
+                defaultValue={game.imageUrl}
             />
             <input
                 type="text"
                 name="gameInfo"
                 className="inputs gameInfo"
+                defaultValue={game.gameInfo}
             />
             <input
                 type="submit"

@@ -1,8 +1,6 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-import magnifyingGlass from '../../images/magnifying-glass.png';
-
 import { AuthContext } from '../../contexts/AuthContext.js';
 import * as navigationService from './navigationService/navigationService';
 
@@ -62,16 +60,6 @@ export const Navigation = () => {
                     </ul>
                 }
             </div>
-            <div className="search">
-                <input type="text" className="input-search" id="input-slide" />
-                <img
-                    className="search-glass"
-                    src={magnifyingGlass}
-                    alt="search-glass"
-                    onClick={(e) => navigationService.showHiddenInput(e)}
-                />
-            </div>
         </nav>
-
     );
 };
