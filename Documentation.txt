@@ -1,3 +1,8 @@
+How to start the project
+1. npm start
+2. cd .\server\
+3. node .\server.js
+
 Everything I have used for this project:
 1. React
 2. React-router-dom
