@@ -36,7 +36,7 @@ export const Login = () => {
             <h1 className="website-login-name">Lordom</h1>
             <form onSubmit={loginUserHandler}>
                 <div>
-                    <input className="login-input" type="text" placeholder="Email" name="email" />
+                    <input className="login-input" type="email" placeholder="Email" name="email" />
                 </div>
                 <div>
                     <input className="login-input" type="password" placeholder="Password" name="password" />

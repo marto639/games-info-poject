@@ -48,7 +48,7 @@ export const Register = () => {
                 <div>
                     <input
                         className="register-input"
-                        type="text"
+                        type="email"
                         placeholder="Email"
                         name="email"
                     />

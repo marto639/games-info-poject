@@ -9,7 +9,7 @@ import { Browse } from './components/Browse/Browse';
 import { Details } from './components/Details/Details';
 import { Create } from './components/Create/Create';
 import { Edit } from './components/Edit/Edit.js';
-import { PageNotFound } from './components/PageNotFound/PageNotFound.js'
+import { PageNotFound } from './components/PageNotFound/PageNotFound.js';
 
 import * as gameService from './components/Services/gamesService.js';
 
