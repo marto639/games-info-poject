@@ -1,0 +1,32 @@
+Everything I have used for this project:
+1. React
+2. React-router-dom
+3. SoftUni practice server
+
+Home page
+1. The first games from server are created from peter@abv.bg
+2. When game is clicked it will redirect the user to details page about the game
+
+Browse page
+1. The first games from server are created from peter@abv.bg
+2. If there are no games a message will appear saying "No Games Yet!"
+3. When game is clicked it will redirect the user to details page about the game
+
+Login page
+1. Every field has to be filled
+2. User must exist
+
+Register page
+1. Every field has to be filled
+
+Details page
+1. Everyone can see details about the games but only the creator can edit and delete them
+2. Edit and delete buttons are not visible by non creators
+
+Edit page
+1. The edit page puts in the input fields the information about the current game
+2. All fields must be filled
+
+Delete 
+1. The delete button only removes the game
+2. and it redirects to browse page
