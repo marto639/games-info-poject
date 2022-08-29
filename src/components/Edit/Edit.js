@@ -1,8 +1,8 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import * as gameService from '../Services/gamesService.js';
-import { AuthContext } from "../../contexts/AuthContext";
+import { AuthContext } from "../../contexts/AuthContext.js";
 
 export const Edit = () => {
     const navigate = useNavigate();
@@ -11,11 +11,12 @@ export const Edit = () => {
     const { id } = useParams();
     const { user } = useContext(AuthContext);
 
-
-    gameService.getOne(id)
-        .then(result => {
-            setGame(result);
-        })
+    useEffect(() => {
+        gameService.getOne(id)
+            .then(result => {
+                setGame(result);
+            })
+    }, [])
 
     const editGame = (e) => {
         e.preventDefault();

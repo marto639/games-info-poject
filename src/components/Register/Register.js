@@ -5,9 +5,8 @@ import { AuthContext } from '../../contexts/AuthContext.js';
 import * as authService from '../Services/authService.js';
 
 export const Register = () => {
-    const { loginUser } = useContext(AuthContext);
-
     const navigate = useNavigate();
+    const { loginUser } = useContext(AuthContext);
 
     const registerUser = (e) => {
         e.preventDefault();
